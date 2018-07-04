@@ -6,12 +6,25 @@ const htmlPlugin = new htmlWebPackPlugin({
 });
 
 const path = require('path');
+const cssLoader = {
+    loader: "css-loader",
+    options: {
+      modules: true,
+      importLoaders: 1,
+      localIdentName: "[name]_[local]_[hash:base64]",
+      sourceMap: true,
+      minimize: true
+     }
+};
+const styleLoader = {
+	loader: "style-loader"
+};
 
 module.exports = {
-	entry: { main: './src/index.js' },
+	entry: { main: './src/app.js' },
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'main.js'
+		filename: 'bundled.js'
 	},
 	module: {
 		rules:[
@@ -19,8 +32,11 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				use: {
-					loader: "babel-loader"
+					loader: 'babel-loader'
 				}
+			}, {
+				test: /\.css$/,
+				use: [ styleLoader, cssLoader]
 			}
 		]
 	},
