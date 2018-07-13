@@ -1,21 +1,20 @@
-import React from "react";
-import ReactDom from "react-dom";
-import style from "./Style.css"
-
-const Index = () => {
-	return (
-		<div> 
-			testing other pack 123123
-			<Search />
-		</div>
-	);
-};
-
-const Search = () => {
-  return <div className={style.primaryButton}>
-           Hello Search Component :)
-         </div>
-}
-ReactDom.render(
-	<Index />, document.getElementById("index")
+import ReactDOM from 'react-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Nav from './components/nav.jsx';
+import Home from './components/home.jsx';
+import Products from './components/products.jsx';
+import NotFound from './components/notfound.jsx';
+ 
+ReactDOM.render(
+	<Router>
+        <div>
+           <Nav />
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/products" component={Products} />
+                <Route component={NotFound} />
+            </Switch>
+        </div>
+    </Router>, document.getElementById("index")
 );

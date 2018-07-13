@@ -21,7 +21,7 @@ const styleLoader = {
 };
 
 module.exports = {
-	entry: { main: './src/app.js' },
+	entry: { main: './src/app.jsx' },
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundled.js'
@@ -39,6 +39,11 @@ module.exports = {
 				use: [ styleLoader, cssLoader]
 			}
 		]
+	},
+	devServer: {
+		historyApiFallback: true,
+		contentBase: './',
+		hot: true
 	},
 	plugins: [htmlPlugin]
 };
