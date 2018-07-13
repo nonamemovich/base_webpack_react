@@ -5,6 +5,7 @@ import {Link, BrowserRouter, NavLink}  from 'react-router-dom';
 
 class ProductsList extends React.Component {
     render() {
+    	console.log("ProductsList");
         return <div>
             <h2>Список товаров</h2>
             <ul>
@@ -22,6 +23,7 @@ class ProductsList extends React.Component {
 
 class Product extends React.Component {
     render() {
+    	console.log("Product ");
         const id = this.props.match.params.id;
         let phone = productsData.items[id];
         const searchParams = new URLSearchParams(this.props.location.search);
@@ -39,6 +41,7 @@ class Product extends React.Component {
 
 class Products extends React.Component {
     render() {
+    	console.log("Products ");
         return <div>
             <Switch>
                 <Route exact path="/products" component={ProductsList}/>

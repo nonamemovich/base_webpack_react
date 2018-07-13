@@ -6,15 +6,24 @@ import Home from './components/home.jsx';
 import Products from './components/products.jsx';
 import NotFound from './components/notfound.jsx';
  
+class Main extends React.Component {
+	render () {
+		console.log("Main");
+		return (
+			<Router>
+		        <div>
+		           <Nav />
+		            <Switch>
+		                <Route exact path="/" component={Home} />
+		                <Route path="/products" component={Products} />
+		                <Route component={NotFound} />
+		            </Switch>
+		        </div>
+		    </Router>
+	    )
+	}
+}
+
 ReactDOM.render(
-	<Router>
-        <div>
-           <Nav />
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/products" component={Products} />
-                <Route component={NotFound} />
-            </Switch>
-        </div>
-    </Router>, document.getElementById("index")
+	<Main />, document.getElementById("index")
 );
