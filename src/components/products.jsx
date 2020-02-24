@@ -50,4 +50,5 @@ class Products extends React.Component {
         </div>
     }
 }
+
 module.exports = Products;

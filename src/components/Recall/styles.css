@@ -1,0 +1,40 @@
+.stars {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  direction: rtl;
+  max-width: 500px;
+  margin: auto;
+}
+
+.star {
+  position: relative;
+  width: 42px;
+  height: 40px;
+  background-image: url('./_resources/images/star.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+.star-filled {
+  background-image: url('./_resources/images/star-filled.svg');
+}
+
+.star:hover::before,
+.star:hover ~ .star::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 40px;
+  content: url'./_resources/images/star-filled.svg');
+}
+
+@media screen and (max-width: 400) {
+  .star:hover::before,
+  .star:hover ~ .star::before {
+    content: url('./_resources/images/star.svg');
+  }
+}
