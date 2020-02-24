@@ -1,7 +1,8 @@
-import React, { PureComponent, useState } from 'react';
+import React, { useState } from 'react';
+import Stars from './Stars/index.jsx';
 import styles from './styles.css';
 
-export default Recall = function() {
+export default function() {
 
   const [mouseOverIndex, setMouseOver] = useState(null);
 
@@ -11,23 +12,11 @@ export default Recall = function() {
     <div className={styles["container"]}>
       <h1 className={styles["title"]}>Рейтинг меню: {rating}</h1>
       <h1 className={styles["title"]}>mouseOverIndex: {mouseOverIndex}</h1>
-      <div>
-        <div className={styles["stars"]}>
-          {[5, 4, 3, 2, 1].map(index => {
-            let filled = index <= mouseOverIndex ? styles['star-filled'] : '';
-
-            return (
-            <div
-                key={index}
-                onMouseLeave={()=> {setMouseOver(null)}}
-                onMouseEnter={()=> {setMouseOver(index)}}
-                className={styles['star'] + ' ' +filled}
-                onClick={()=> {setRaitnig(index)}}
-              />
-            )}
-          )}
-        </div>
-      </div>
+      <Stars
+        mouseOverIndex={mouseOverIndex}
+        setMouseOver={setMouseOver}
+        setRaitnig={setRaitnig}
+      />
       <form>
         <input
           type="text"
