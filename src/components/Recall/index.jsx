@@ -33,6 +33,9 @@ export default function() {
             }
           }}
         />
+        <div className={styles.crop}>
+            <img src="http://localhost:3001/src/public/1.jpg" />
+        </div>
         <input type='submit'/>
       </form>
     </div>

@@ -5,4 +5,4 @@ class NotFound extends React.Component{
         return <h2>Ресурс не найден</h2>;
     }
 }
-module.exports = NotFound;
+export default NotFound;

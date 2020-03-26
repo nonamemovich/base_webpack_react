@@ -8,6 +8,8 @@ const port = 3001;
 const app = express();
 const compiler = webpack(config);
 
+app.use(express.static('./src/public'));
+
 app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath,
   stats: {

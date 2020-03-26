@@ -22,6 +22,18 @@
   background-image: url('./_resources/images/star-filled.svg');
 }
 
+.crop {
+  width: 315px;
+  height: 258px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.crop img {
+  width: 100%;
+}
+
 .star:hover::before,
 .star:hover ~ .star::before {
   position: absolute;
