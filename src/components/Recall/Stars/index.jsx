@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles.css';
+import styles from '../styles.scss';
 
 export const Stars = function(props) {
   const {

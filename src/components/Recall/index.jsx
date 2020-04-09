@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Stars from './Stars/index.jsx';
-import styles from './styles.css';
+import styles from './styles.scss';
 
 export default function() {
 
@@ -35,6 +35,9 @@ export default function() {
         />
         <div className={styles.crop}>
             <img src="http://localhost:3001/src/public/1.jpg" />
+        </div>
+        <div className={styles.crop}>
+            <img src="http://localhost:3001/src/public/2.jpg" />
         </div>
         <input type='submit'/>
       </form>

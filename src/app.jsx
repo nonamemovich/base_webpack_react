@@ -8,6 +8,8 @@ const Home = lazy(() => import('./components/home.jsx'));
 const Products = lazy(() => import('./components/products.jsx'));
 const NotFound = lazy(() => import('./components/notfound.jsx'));
 const Recall = lazy(() => import('./components/Recall/index.jsx'));
+const ReactTable = lazy(() => import('./components/ReactTable/index.jsx'));
+const FlexBox = lazy(() => import('./components/FlexBox/index.jsx'));
  
 const App = () => (
   <Router>
@@ -17,6 +19,8 @@ const App = () => (
 				<Route exact path="/" component={Home} />
 				<Route path="/products" component={Products} />
 				<Route path="/recall" component={Recall} />
+        <Route path="/react-table" component={ReactTable} />
+        <Route path="/flex" component={FlexBox} />
 				<Route component={NotFound} />
       </Switch>
     </Suspense>

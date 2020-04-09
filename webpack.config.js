@@ -6,7 +6,7 @@ const htmlPlugin = new htmlWebPackPlugin({
 });
 
 const path = require('path');
-const cssLoader = {
+const scssLoader = {
     loader: "css-loader",
     options: {
       modules: true,
@@ -16,6 +16,7 @@ const cssLoader = {
       minimize: true
      }
 };
+
 const styleLoader = {
 	loader: "style-loader"
 };
@@ -35,8 +36,11 @@ module.exports = {
 					loader: 'babel-loader'
 				}
 			}, {
+				test: /\.scss$/,
+				use: [ styleLoader, scssLoader]
+			}, {
 				test: /\.css$/,
-				use: [ styleLoader, cssLoader]
+				use: ['style-loader', 'css-loader'],
 			},
 			{
 				test: /\.svg/,
