@@ -47,7 +47,7 @@ export const Flex = () => {
       <span className={styles.label}> table</span>
       <table>
         <thead>
-          <row>
+          <tr>
             <th>
               header 1
             </th>
@@ -57,10 +57,10 @@ export const Flex = () => {
             <th>
               header 3 ard 58ju9nh 85 ujt9ungup[q3 b99e8t h9y[su 39n34
             </th>
-          </row>
+          </tr>
         </thead>
         <tbody>
-          <row>
+          <tr>
             <td>
               header 1 ard 58ju9nh 85 ujt9ungup[q3 b99e8t h9y[su 39n34
             </td>
@@ -70,8 +70,8 @@ export const Flex = () => {
             <td>
               header 3
             </td>
-          </row>
-          <row>
+          </tr>
+          <tr>
             <td>
               header 1
             </td>
@@ -81,7 +81,7 @@ export const Flex = () => {
             <td>
               header 3
             </td>
-          </row>
+          </tr>
         </tbody>
       </table>
       
