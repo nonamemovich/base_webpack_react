@@ -18,7 +18,14 @@
 }
 
 .first {
-  min-width: 200px;
+  min-width: 400px !important;
+}
+
+.flexcell {
+  height: 40px;
+  border: 2px solid black;
+  white-space: nowrap;
+  min-width: 80px;
 }
 
 .label {
@@ -30,6 +37,10 @@
 .column {
   display: flex;
   flex-direction: column;
+}
+
+.first_column {
+  width: 100%;
 }
 
 .cell1 {
@@ -45,6 +56,11 @@
   flex: 100 0 auto;
   height: 40px;
 
+}
+
+.div_table {
+  width: 800px;
+  overflow-x: auto;
 }
 
 .cell3 {

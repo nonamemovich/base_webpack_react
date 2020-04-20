@@ -10,7 +10,14 @@ const NotFound = lazy(() => import('./components/notfound.jsx'));
 const Recall = lazy(() => import('./components/Recall/index.jsx'));
 const ReactTable = lazy(() => import('./components/ReactTable/index.jsx'));
 const FlexBox = lazy(() => import('./components/FlexBox/index.jsx'));
- 
+
+const routes = [
+  {
+    path: '/flex',
+    component: FlexBox,
+  }
+];
+
 const App = () => (
   <Router>
     <Suspense fallback={<div>Загрузка...</div>}>
@@ -22,6 +29,13 @@ const App = () => (
         <Route path="/react-table" component={ReactTable} />
         <Route path="/flex" component={FlexBox} />
 				<Route component={NotFound} />
+        {routes.map(({
+          path, component: Module,
+        })=>(
+          <Route path={path} render={(props)=>(
+            <Module {...props} />
+          )}/>
+        ))}
       </Switch>
     </Suspense>
   </Router>
