@@ -1,5 +1,5 @@
 import React from 'react';
-import productsData from '../test/productsData.jsx';
+import productsData from '../../test/productsData.jsx';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {Link, BrowserRouter, NavLink}  from 'react-router-dom';
 

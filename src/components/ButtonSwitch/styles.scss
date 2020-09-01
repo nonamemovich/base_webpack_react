@@ -1,0 +1,137 @@
+@import '../../styles/variables.scss';
+
+.button {
+  flex: 0 1 150px;
+  height: 48px;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-family: $fontDefault;
+  font-size: 20px;
+  line-height: 45px;
+  color: $black;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.small {
+  font-size: 18px;
+}
+
+.gray {
+  color: $gray-55;
+
+  &:hover {
+    color: $gray-32;
+  }
+}
+
+.orange:hover {
+  color: $orange-40;
+}
+
+.green:hover {
+  color: $green-70;
+}
+
+.green-wrap {
+  color: $green-70;
+
+  &:last-child {
+    flex-grow: 0;
+  }
+}
+
+.common:hover {
+  color: $gray-36;
+}
+
+.fish:hover {
+  color: $blue-20;
+}
+
+.detox:hover,
+.vegetarian:hover {
+  color: $green-70;
+}
+
+.day {
+  flex-basis: 0%;
+
+  &:hover {
+    color: $gray-32;
+  }
+}
+
+.is-disabled {
+  color: $gray-87 !important;
+  opacity: 1 !important;
+  cursor: default;
+
+  &.gray {
+    color: $gray-55 !important;
+
+    &:hover {
+      color: $gray-55 !important;
+    }
+  }
+}
+
+.is-active {
+  color: $white !important;
+  cursor: default;
+  opacity: 1 !important;
+
+  &.orange {
+    background-color: $orange-40;
+  }
+
+  &.green {
+    background-color: $green-70;
+  }
+
+  &.green-wrap {
+    background-color: $green-70;
+  }
+
+  &.common {
+    background-color: $gray-36;
+  }
+
+  &.fish {
+    background-color: $blue-20;
+  }
+
+  &.detox,
+  &.vegetarian {
+    background-color: $green-70;
+  }
+
+  &.day {
+    background-color: $gray-32;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .button {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .button {
+    flex: 1 1 auto;
+  }
+
+  .green-wrap {
+    &:last-child {
+      flex-grow: 1;
+    }
+  }
+}

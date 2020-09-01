@@ -1,0 +1,39 @@
+@import '../../styles/variables.scss';
+
+.group {
+  display: flex;
+  border-radius: 5px;
+  padding: 7px 6px;
+}
+
+.space-between {
+  justify-content: end;
+}
+
+.end {
+  justify-content: end;
+}
+
+.white {
+  background-color: $white;
+}
+
+.gray {
+  background-color: #f0f0f0;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.bordered {
+  border: 1px solid #f0f0f0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+@media screen and (max-width: 580px) {
+  .group {
+    display: block;
+  }
+}

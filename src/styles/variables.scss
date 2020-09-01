@@ -1,0 +1,74 @@
+// FONTS
+$fontDefault: Roboto-Slab-Regular, Arial, serif;
+$fontFirst: Roboto-Regular, Arial, serif;
+$fontSecond: Nautilus-Regular, Arial, serif;
+
+// black
+$black: black;
+
+// white
+$white: white;
+
+// red
+$red-10: #edd8d7;
+$red-50: #f30f0f;
+$red-40: #f66945;
+$red-60: #b86761;
+$red-90: #56102a;
+
+// orange
+$orange-30: #eba027;
+$orange-40: #e85f3c;
+$orange-50: #e85f3c;
+$orange-40_alpha-50: rgba(232, 95, 60, 0.5);
+
+// yellow
+$yellow-10: #fffdc4;
+$yellow-20: #eae78a;
+
+// green
+$green-10: #e7fcee;
+$green-20: #b7ec8a;
+$green-47: #679e52;
+$green-50: #45ba56;
+$green-70: #76b95d;
+$green-70_alpha-25: rgba(118, 185, 93, 0.25);
+
+// blue
+$blue-20: #5d9eb9;
+$blue-80: #0f194f;
+
+$purple: #754a90;
+
+// gray
+$gray-10: #131312;
+$gray-15: #2e2e2e;
+$gray-25: #3e3e3e;
+$gray-32: #505050;
+$gray-35: #595959;
+$gray-36: #5a5a5a;
+$gray-37: #727272;
+$gray-40: #767676;
+$gray-45: #807e7e;
+$gray-50: #888787;
+$gray-55: #8b8b8b;
+$gray-57: #919191;
+$gray-58: #939393;
+$gray-59: #959595;
+$gray-60: #979797;
+$gray-62: #9a9a9a;
+$gray-67: #acacac;
+$gray-80: #e8e8e8;
+$gray-87: #dfdfdf;
+$gray-94: #f0f0f0;
+$gray-95: #f2f2f2;
+$gray-97: #f7f7f7;
+
+$gray-25_alpha-50: rgba(62, 62, 62, 0.5);
+$gray-67_alpha-25: rgba(172, 172, 172, 0.25);
+
+// breakpoints
+$medium: 1200px;
+$tablet: 992px;
+$mobile: 700px;
+$smallMobile: 480px;

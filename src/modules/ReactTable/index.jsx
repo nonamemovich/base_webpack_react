@@ -12,6 +12,18 @@ class Table extends React.Component {
     this.state = {
       data: makeData()
     };
+    this.renderCell = this.renderCell.bind(this);
+  }
+  renderCell(cellInfo) {
+    return (
+      <div
+        style={{ backgroundColor: "#fafafa" }}
+        contentEditable={false}
+        suppressContentEditableWarning
+      >
+        {this.state.data[cellInfo.index][cellInfo.column.id]}
+      </div>
+    );
   }
   render() {
     const { data } = this.state;
@@ -26,11 +38,13 @@ class Table extends React.Component {
                 {
                   Header: "First Name 13212 3123 154435 543346435",
                   accessor: "firstName",
+                  Cell: this.renderCell,
                 },
                 {
                   Header: "Last Name",
                   id: "lastName",
                   accessor: d => d.lastName,
+                  Cell: this.renderCell,
                 }
               ]
             },

@@ -35,7 +35,15 @@
   top: 0;
   width: 42px;
   height: 40px;
-  content: url'./_resources/images/star-filled.svg');
+  content: url('./_resources/images/star-filled.svg');
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 25px;
+  max-width: 882px;
 }
 
 @media screen and (max-width: 400) {
