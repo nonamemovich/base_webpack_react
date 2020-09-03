@@ -29,6 +29,11 @@ class Nav extends React.Component{
                     Flex
                 </h1>
             </Link>
+            <Link to="/svg">
+                <h1>
+                    SvgTest
+                </h1>
+            </Link>
         </div>
     }
 }

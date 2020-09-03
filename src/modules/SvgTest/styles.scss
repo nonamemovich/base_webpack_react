@@ -1,0 +1,29 @@
+.circle-container {
+  width: 600px;
+  height: 300px;
+}
+
+.circle-test {
+  width: 600px;
+  height: 600px;
+}
+
+.circle-protein {
+  stroke: #ced4d9;
+  stroke-width: 8;
+  fill: #ced4d9;
+}
+
+.circle-dash {
+  stroke: #ced4d9;
+  stroke-width: 30;
+  fill: none;
+}
+.circle-test {
+  stroke: #ced4d9;
+  stroke-width: 30;
+  fill: none;
+  z-index: 1;
+  stroke-dasharray: 756, 1128;
+  stroke-dashoffset: 708;
+}

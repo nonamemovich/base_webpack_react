@@ -10,6 +10,7 @@ const NotFound = lazy(() => import('./modules/NotFound/index.jsx'));
 const Recall = lazy(() => import('./modules/Recall/index.jsx'));
 const ReactTable = lazy(() => import('./modules/ReactTable/index.jsx'));
 const FlexBox = lazy(() => import('./modules/FlexBox/index.jsx'));
+const SvgTest = lazy(() => import('./modules/SvgTest/index.jsx'));
 
 const routes = [
   {
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/recall" component={Recall} />
           <Route path="/react-table" component={ReactTable} />
           <Route path="/flex" component={FlexBox} />
+          <Route path="/svg" component={SvgTest} />
           <Route component={NotFound} />
           {routes.map(({
             path, component: Module,
