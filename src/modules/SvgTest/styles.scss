@@ -1,3 +1,7 @@
+.content {
+  position: relative;
+}
+
 .circle-container {
   width: 600px;
   height: 300px;
@@ -8,7 +12,7 @@
   height: 600px;
 }
 
-.circle-protein {
+.circle {
   stroke: #ced4d9;
   stroke-width: 8;
   fill: #ced4d9;
@@ -21,9 +25,41 @@
 }
 .circle-test {
   stroke: #ced4d9;
-  stroke-width: 30;
+  stroke-width: 40px;
   fill: none;
   z-index: 1;
   stroke-dasharray: 756, 1128;
   stroke-dashoffset: 708;
+}
+
+.circle-black {
+  fill: black;
+}
+
+.speed-arrow {
+  position: absolute;
+  width: 300px;
+  left: 150px;
+  height: 300px;
+}
+
+.zero {
+  transform: rotate(-90deg);
+}
+
+.speed-1 {
+  transform: rotate(-70deg)
+}
+.speed-2 {
+  transform: rotate(-25deg);
+}
+.speed-3 {
+  transform: rotate(25deg);
+}
+.speed-4 {
+  transform: rotate(70deg);
+}
+
+.selected {
+  stroke: rgba(160, 181, 42, 0.7);;
 }
