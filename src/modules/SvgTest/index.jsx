@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
+import variables from './variables.scss';
 import styles from './styles.scss';
 
 const INFLUENCE = {
@@ -20,14 +21,24 @@ export const svgTest = ({
   const radius = 145;
   const radiusDash = 200;
 
-  const arrowClasses = cn(styles["speed-arrow"], {
-    [styles["zero"]]: INFLUENCE.NOT_AFFECT === influenceValue,
-    [styles["speed-1"]]: INFLUENCE.LOWEST === influenceValue,
-    [styles["speed-2"]]: INFLUENCE.LOW === influenceValue,
-    [styles["speed-3"]]: INFLUENCE.MIDDLE === influenceValue,
-    [styles["speed-4"]]: INFLUENCE.HIGTH === influenceValue,
-  });
-
+  let rotate;
+  switch(influenceValue) {
+    case INFLUENCE.LOWEST:
+      rotate = variables.lowest;
+      break;
+    case INFLUENCE.LOW:
+      rotate = variables.low
+      break;
+    case INFLUENCE.MIDDLE:
+      rotate = variables.middle;
+      break;
+    case INFLUENCE.HIGTH:
+      rotate = variables.higth;
+      break;
+    default:
+      rotate = variables.zero;
+  }
+  const arrowClasses = cn(styles["speed-arrow"]);
   const scale = width / contentWidth;
 
   return (
@@ -102,7 +113,7 @@ export const svgTest = ({
 
       <svg
         style={{
-          transform: `scale(${scale})`,
+          transform: `scale(${scale}) ${rotate}`,
           top: `${150 * scale}px`,
         }}
         className={arrowClasses}
@@ -143,8 +154,8 @@ svgTest.propTypes = {
 }
 
 svgTest.defaultProps = {
-  influenceValue: INFLUENCE.NOT_AFFECT,
-  width: 200,
+  influenceValue: INFLUENCE.MIDDLE,
+  width: 300,
 }
 
 export default svgTest;
