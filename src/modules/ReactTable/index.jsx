@@ -1,6 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
 import { makeData, Logo, Tips } from "./Utils.jsx";
+import Svg from '../SvgTest/index.jsx'
+import styles from "./styles.scss";
 
 // Import React Table
 import ReactTable from "react-table";
@@ -62,6 +64,14 @@ class Table extends React.Component {
           className="-striped -highlight"
         />
         <br />
+        <div className={styles.flex}>
+          <Svg
+            containerClass={styles.graph}
+          />
+          <div>
+            asdsadf
+          </div>
+        </div>
         <Tips />
         <Logo />
       </div>

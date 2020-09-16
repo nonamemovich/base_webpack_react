@@ -13,10 +13,12 @@ const INFLUENCE = {
 }
 
 const contentWidth = 600;
+const contentHeight = 300;
 
 export const svgTest = ({
   influenceValue,
   width,
+  containerClass,
 }) => {
   const radius = 145;
   const radiusDash = 200;
@@ -42,7 +44,13 @@ export const svgTest = ({
   const scale = width / contentWidth;
 
   return (
-    <div className={styles["content"]}>
+    <div
+      className={cn(styles["content"], containerClass)}
+      style={{
+        width: `${contentWidth * scale}px`,
+        height: `${contentHeight * scale}px`,
+      }}
+    >
       <svg
         className={styles["circle-container"]}
         style={{
@@ -151,11 +159,12 @@ svgTest.propTypes = {
     INFLUENCE.HIGTH,
   ]),
   width: PropTypes.number,
+  containerClass: PropTypes.string,
 }
 
 svgTest.defaultProps = {
   influenceValue: INFLUENCE.MIDDLE,
-  width: 300,
+  width: 400,
 }
 
 export default svgTest;

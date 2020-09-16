@@ -3,3 +3,16 @@ body {
   font-weight: 300;
   font-size: 14px;
 }
+
+.graph {
+  width: 300px;
+  left: -150px;
+  height: 150px;
+  top: -75px;
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
