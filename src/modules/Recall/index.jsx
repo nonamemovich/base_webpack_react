@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import debounce from 'lodash/debounce';
+import get from 'lodash/get';
 import Stars from './Stars/index.jsx';
 import ButtonGroup from '../../components/ButtonGroup/index.jsx';
 import ButtonSwitch from '../../components/ButtonSwitch/index.jsx';
+import Form from './Form/index.jsx';
 import styles from './styles.scss';
 
 const valuesArray = [
@@ -37,6 +40,8 @@ const valuesArray = [
 
 export default function() {
 
+  let inputEl = useRef(null);
+
   const [mouseOverIndex, setMouseOver] = useState(null);
 
   const [rating, setRaitnig] = useState('');
@@ -44,16 +49,19 @@ export default function() {
   const [age, setInput] = useState('');
   const [currentValue, changeValue] = useState(valuesArray[0]);
 
-  const handleChange = (pattern) => (event)=>{
-    const match = event.target.value.match(new RegExp(pattern));
+  const handleChange = (pattern) => () => {
+    const input = get(inputEl, 'current')
+    const value = get(inputEl, ['current', 'value']);
+    const match = value.match(new RegExp(pattern));
 
-    if (match && +match[0] === +event.target.value) {
-      setInput(event.target.value);
+    if (match && +match[0] === +value) {
+      setInput(value);
     }
-    if (event.target.value=='' && event.target.setCustomValidity) {
-      event.target.setCustomValidity('custom validate');
+
+    if (value=='' && input.setCustomValidity) {
+      input.setCustomValidity('custom validate');
     } else {
-      event.target.setCustomValidity('');
+      input.setCustomValidity('');
     }
   }
 
@@ -87,23 +95,11 @@ export default function() {
           ))}
         </ButtonGroup>
       </div>
-      <form>
-        <input
-          id="username"
-          required
-          type="text"
-          placeholder="Enter age"
-          onChange={handleChange("[0-9.]*")}
-          value={age}
-        />
-        <div className={styles.crop}>
-            <img src="http://localhost:3001/src/public/1.jpg" />
-        </div>
-        <div className={styles.crop}>
-            <img src="http://localhost:3001/src/public/2.jpg" />
-        </div>
-        <input type='submit'/>
-      </form>
+      <Form
+        onChange={debounce(handleChange("[0-9.]*"), 1000)}
+        value={age}
+        inputEl={inputEl}
+      />
     </div>
   );
 }

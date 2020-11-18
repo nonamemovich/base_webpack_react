@@ -11,8 +11,29 @@ const Recall = lazy(() => import('./modules/Recall/index.jsx'));
 const ReactTable = lazy(() => import('./modules/ReactTable/index.jsx'));
 const FlexBox = lazy(() => import('./modules/FlexBox/index.jsx'));
 const SvgTest = lazy(() => import('./modules/SvgTest/index.jsx'));
+const Form = lazy(() => import('./modules/Form/index.jsx'));
 
 const routes = [
+  {
+    path: '/products',
+    component: Products,
+  },
+  {
+    path: '/recall',
+    component: Recall,
+  },
+  {
+    path: '/react-table',
+    component: ReactTable,
+  },
+  {
+    path: '/svg',
+    component: SvgTest,
+  },
+  {
+    path: '/form',
+    component: Form,
+  },
   {
     path: '/flex',
     component: FlexBox,
@@ -25,12 +46,6 @@ const App = () => (
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/products" component={Products} />
-          <Route path="/recall" component={Recall} />
-          <Route path="/react-table" component={ReactTable} />
-          <Route path="/flex" component={FlexBox} />
-          <Route path="/svg" component={SvgTest} />
-          <Route component={NotFound} />
           {routes.map(({
             path, component: Module,
           })=>(
@@ -38,12 +53,13 @@ const App = () => (
               <Module {...props} />
             )}/>
           ))}
+          <Route component={NotFound} />
         </Switch>
       </Suspense>
   </Router>
 );
 
-runNormilize();
+// runNormilize();
 
 ReactDOM.render(
 	<App />, document.getElementById("index")

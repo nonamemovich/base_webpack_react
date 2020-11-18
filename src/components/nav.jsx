@@ -34,6 +34,11 @@ class Nav extends React.Component{
                     SvgTest
                 </h1>
             </Link>
+            <Link to="/svg">
+                <h1>
+                    Form
+                </h1>
+            </Link>
         </div>
     }
 }

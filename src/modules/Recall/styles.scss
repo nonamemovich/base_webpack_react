@@ -22,10 +22,14 @@
   background-image: url('./_resources/images/star-filled.svg');
 }
 
-.crop img {
-  width: 315px;
-  height: 258px;
-  object-fit: scale-down;
+.crop {
+  margin: 20px 0;
+
+  img {
+    width: 315px;
+    height: 258px;
+    object-fit: scale-down;
+  }
 }
 
 .star:hover::before,
